@@ -1,0 +1,19 @@
+name: Criar Issues do Projeto
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  criar-a-issue:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout do código
+        uses: actions/checkout@v4
+
+      - name: Criar Issue a partir do arquivo
+        uses: peter-evans/create-issue-from-file@v5
+        with:
+          title: "Nova Issue do Arquivo Markdown" 
+          content-filepath: "./issues.md"    
