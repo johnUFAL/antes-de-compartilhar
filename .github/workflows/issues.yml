@@ -1,4 +1,4 @@
-name: Criar Issues do Projeto
+name: Criar Issues em Massa
 
 on:
   push:
@@ -6,14 +6,32 @@ on:
       - main
 
 jobs:
-  criar-a-issue:
+  criar-multiplas-issues:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout do código
         uses: actions/checkout@v4
 
-      - name: Criar Issue a partir do arquivo
-        uses: peter-evans/create-issue-from-file@v5
-        with:
-          title: "Nova Issue do Arquivo Markdown" 
-          content-filepath: "./issues.md"    
+      - name: Ler arquivos e criar issues com labels
+        run: |
+          for arquivo in issues-gerais/*.md; do
+            echo "------------------------------------------------"
+            echo "Processando o arquivo: $arquivo"
+            
+            TITULO=$(head -n 1 "$arquivo")
+            
+            LABELS_LINHA=$(grep -i "\*\*Labels:\*\*" "$arquivo" || true)
+            LABELS=$(echo "$LABELS_LINHA" | sed -e 's/\*\*Labels:\*\*//I' -e 's/`//g' -e 's/ //g')
+            
+            CORPO=$(tail -n +2 "$arquivo")
+            
+            if [ -n "$LABELS" ]; then
+              echo "Criando issue com as labels: $LABELS"
+              echo "$CORPO" | gh issue create --title "$TITULO" --body-file - --label "$LABELS"
+            else
+              echo "Criando issue sem labels"
+              echo "$CORPO" | gh issue create --title "$TITULO" --body-file -
+            fi
+          done
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
