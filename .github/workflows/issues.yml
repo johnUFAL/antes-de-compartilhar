@@ -24,14 +24,14 @@ jobs:
             # Limpa os caracteres '## ' ou '### ' do início do título caso existam
             TITULO=$(echo "$TITULO_BRUTO" | sed 's/^#*\s*//')
             
-            # Se mesmo assim o título for vazio, avisa e pula para o próximo arquivo
+            # Se o título for vazio, avisa e pula para o próximo arquivo
             if [ -z "$TITULO" ]; then
               echo "Erro: O arquivo $arquivo está vazio ou sem título. Pulando..."
               continue
             fi
             
-            # 2. Verifica se já existe uma issue aberta com este título exato para evitar duplicadas
-            CHECK_DUPLICADA=$(gh issue list --search "$TITULO" --state open --json title --jq '..title')
+            # 2. Verifica se já existe uma issue aberta com este título exato (versão corrigida e segura)
+            CHECK_DUPLICADA=$(gh issue list --search "$TITULO" --state open --json title -q '.[] | .title' || true)
             
             if [ "$CHECK_DUPLICADA" = "$TITULO" ]; then
               echo "Aviso: A issue '$TITULO' já existe aberta no GitHub. Pulando..."
