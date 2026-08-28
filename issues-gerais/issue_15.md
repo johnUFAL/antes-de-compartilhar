@@ -1,4 +1,4 @@
-### Issue 15 (opcional / stretch goal): Estatísticas anônimas de turma
+## Issue 15 (opcional / stretch goal): Estatísticas anônimas de turma
 **Labels:** `stretch-goal`, `backend`
 **Descrição:**
 Só implementar se sobrar tempo depois da Semana 6. Não é bloqueante para a apresentação.

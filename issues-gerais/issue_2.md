@@ -1,4 +1,4 @@
-### Issue 2: Pesquisar e escrever os cenários de mensagens fictícias
+## Issue 2: Pesquisar e escrever os cenários de mensagens fictícias
 **Labels:** `content`, `research`
 **Descrição:**
 Este é o coração pedagógico do projeto. Precisa de pesquisa cuidadosa para que os exemplos sejam realistas e as fontes oficiais indicadas sejam verdadeiras.

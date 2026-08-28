@@ -1,5 +1,4 @@
-
-### Issue 8: Implementar ActionBar (Compartilhar / Pesquisar / Ignorar / Denunciar)
+## Issue 8: Implementar ActionBar (Compartilhar / Pesquisar / Ignorar / Denunciar)
 **Labels:** `frontend`
 **Tarefas:**
 - [ ] Quatro botões de ação estilizados

@@ -1,6 +1,4 @@
-## Milestone 2 — Setup do Projeto (Semana 2)
-
-### Issue 4: Inicializar projeto React + Vite + TypeScript
+## Issue 4: Inicializar projeto React + Vite + TypeScript
 **Labels:** `setup`
 **Tarefas:**
 - [ ] `npm create vite@latest` com template `react-ts`

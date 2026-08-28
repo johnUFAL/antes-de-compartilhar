@@ -1,6 +1,4 @@
-## Milestone 4 — Conteúdo Completo e Fluxo (Semana 5)
-
-### Issue 11: Popular `scenarios.ts` com todos os cenários revisados
+## Issue 11: Popular `scenarios.ts` com todos os cenários revisados
 **Labels:** `content`, `frontend`
 **Tarefas:**
 - [ ] Migrar os cenários escritos na Issue 2 para o formato de dados definido na Issue 1

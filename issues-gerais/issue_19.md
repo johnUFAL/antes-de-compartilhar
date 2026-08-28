@@ -1,4 +1,4 @@
-### Issue 19: Documentação (README) e roteiro de apresentação
+## Issue 19: Documentação (README) e roteiro de apresentação
 **Labels:** `docs`
 **Tarefas:**
 - [ ] README com: objetivo do projeto, como rodar localmente, tecnologias usadas, prints de tela

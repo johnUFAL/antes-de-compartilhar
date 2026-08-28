@@ -1,4 +1,4 @@
-### Issue 17: Corrigir bugs e ajustes de conteúdo encontrados
+## Issue 17: Corrigir bugs e ajustes de conteúdo encontrados
 **Labels:** `bug`, `content`
 **Tarefas:**
 - [ ] Revisar itens levantados na Issue 16

@@ -1,6 +1,4 @@
-## Milestone 1 — Planejamento e Conteúdo (Semana 1)
-
-### Issue 1: Definir estrutura de dados dos cenários
+## Issue 1: Definir estrutura de dados dos cenários
 **Labels:** `setup`, `design`
 **Descrição:**
 Criar o "molde" de dados que vai representar cada cenário fictício. Isso deve ser decidido antes de qualquer código de tela, porque toda a UI vai depender dessa estrutura.

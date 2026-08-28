@@ -1,6 +1,4 @@
-## Milestone 3 — Motor do Simulador (Semanas 3–4)
-
-### Issue 7: Implementar tela de chat (ChatScreen + MessageBubble)
+## Issue 7: Implementar tela de chat (ChatScreen + MessageBubble)
 **Labels:** `frontend`
 **Descrição:**
 Construir a interface visual que imita o WhatsApp, exibindo a mensagem fictícia atual.

@@ -1,4 +1,4 @@
-### Issue 3: Wireframe da experiência (papel ou Figma)
+## Issue 3: Wireframe da experiência (papel ou Figma)
 **Labels:** `design`
 **Descrição:**
 Desenhar o fluxo de telas antes de programar, para não perder tempo redesenhando componentes já feitos.

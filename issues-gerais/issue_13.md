@@ -1,6 +1,4 @@
-## Milestone 5 — Polimento (Semana 6)
-
-### Issue 13: Responsividade e acessibilidade
+## Issue 13: Responsividade e acessibilidade
 **Labels:** `frontend`, `a11y`
 **Tarefas:**
 - [ ] Testar em tela de celular (a maioria vai acessar assim, dado o tema WhatsApp)

@@ -1,4 +1,4 @@
-### Issue 12: Tela de introdução e tela de resumo final
+## Issue 12: Tela de introdução e tela de resumo final
 **Labels:** `frontend`
 **Tarefas:**
 - [ ] `IntroScreen`: explica a dinâmica antes de começar

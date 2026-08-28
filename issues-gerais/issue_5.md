@@ -1,4 +1,4 @@
-### Issue 5: Configurar deploy contínuo (Vercel)
+## Issue 5: Configurar deploy contínuo (Vercel)
 **Labels:** `setup`, `deploy`
 **Descrição:**
 Configurar o deploy cedo, mesmo com o app vazio, evita surpresas de configuração na última semana.

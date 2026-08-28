@@ -1,4 +1,4 @@
-### Issue 6: Criar o AppContext (estado global com useReducer)
+## Issue 6: Criar o AppContext (estado global com useReducer)
 **Labels:** `frontend`
 **Descrição:**
 Implementar a máquina de estados central: tela atual, índice do cenário, respostas dadas, pontuação.

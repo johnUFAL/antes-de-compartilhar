@@ -1,4 +1,4 @@
-### Issue 9: Implementar o motor de avaliação (`evaluateAction.ts`)
+## Issue 9: Implementar o motor de avaliação (`evaluateAction.ts`)
 **Labels:** `frontend`, `logic`
 **Descrição:**
 Função pura, sem dependência de UI, que recebe o cenário e a ação escolhida e devolve o feedback correspondente. Mantê-la pura facilita testá-la isoladamente.

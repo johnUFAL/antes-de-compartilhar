@@ -1,6 +1,4 @@
-## Milestone 6 — Testes e Validação (Semana 7)
-
-### Issue 16: Teste com usuários reais (colegas/família)
+## Issue 16: Teste com usuários reais (colegas/família)
 **Labels:** `testing`
 **Tarefas:**
 - [ ] Pedir para 3–5 pessoas usarem o app sem explicação prévia

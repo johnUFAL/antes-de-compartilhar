@@ -1,6 +1,4 @@
-## Milestone 7 — Entrega e Apresentação (Semana 8)
-
-### Issue 18: Deploy final e revisão de performance
+## Issue 18: Deploy final e revisão de performance
 **Labels:** `deploy`
 **Tarefas:**
 - [ ] Build de produção e checagem do tamanho do bundle

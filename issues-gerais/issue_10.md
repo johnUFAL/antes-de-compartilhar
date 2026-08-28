@@ -1,4 +1,4 @@
-### Issue 10: Implementar FeedbackModal
+## Issue 10: Implementar FeedbackModal
 **Labels:** `frontend`
 **Descrição:**
 Tela/modal que aparece após a escolha, mostrando o sinal de alerta, onde verificar, a fonte oficial e a explicação da técnica de manipulação usada.
