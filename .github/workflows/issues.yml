@@ -30,10 +30,10 @@ jobs:
               continue
             fi
             
-            # 2. Verifica se já existe uma issue aberta com este título exato (versão corrigida e segura)
+            # 2. Verifica se já existe uma issue aberta com este título exato
             CHECK_DUPLICADA=$(gh issue list --search "$TITULO" --state open --json title -q '.[] | .title' || true)
             
-            if [ "$CHECK_DUPLICADA" = "$TITULO" ]; then
+            if echo "$CHECK_DUPLICADA" | grep -qFx "$TITULO"; then
               echo "Aviso: A issue '$TITULO' já existe aberta no GitHub. Pulando..."
               continue
             fi
