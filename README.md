@@ -166,3 +166,7 @@ npm run build
 ```
 
 Um PR não deve ser aberto se `npm run build` falhar.
+
+## 11. Wireframer de experiência no figma
+
+Acesse o link para visualizar: [Figma antes de compartilhar](https://www.figma.com/design/wYfovuJjZoZcnCwkkdZRad/Antes-de-Compartilhar?node-id=1-30&t=l6pqwVmtPRCxSARU-1)
