@@ -170,3 +170,8 @@ Um PR não deve ser aberto se `npm run build` falhar.
 ## 11. Wireframer de experiência no figma
 
 Acesse o link para visualizar: [Figma antes de compartilhar](https://www.figma.com/design/wYfovuJjZoZcnCwkkdZRad/Antes-de-Compartilhar?node-id=1-30&t=l6pqwVmtPRCxSARU-1)
+
+## 12. Deploy
+
+O projeto está hospedado no vercel e pode ser acessado pelo link a seguir:
+- [antes-de-compartilhar.vercel.app](antes-de-compartilhar.vercel.app)
