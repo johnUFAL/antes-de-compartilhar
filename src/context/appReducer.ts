@@ -1,3 +1,5 @@
+import { SCENARIOS } from '../data/scenarios';
+
 export type Screen = 'INTRO' | 'SIMULATOR' | 'SUMMARY';
 
 export interface AppState {
@@ -24,14 +26,23 @@ export function appReducer(state: AppState, action: AppAction): AppState {
   switch (action.type) {
     case 'SET_SCREEN':
       return { ...state, currentScreen: action.payload };
-    case 'AVANCAR_CENARIO':
-      return { ...state, currentScenarioIndex: state.currentScenarioIndex + 1 };
-    case 'REGISTRAR_RESPOSTA':
+    case 'AVANCAR_CENARIO': {
+      const proximo = state.currentScenarioIndex + 1;
+      // Acabaram os cenários: vai para o resumo
+      if (proximo >= SCENARIOS.length) {
+        return { ...state, currentScreen: 'SUMMARY' };
+      }
+      return { ...state, currentScenarioIndex: proximo };
+    }
+    case 'REGISTRAR_RESPOSTA': {
+      // Ignora resposta repetida para o mesmo cenário (evita pontuar duas vezes)
+      if (action.payload.scenarioIndex in state.answers) return state;
       return {
         ...state,
         answers: { ...state.answers, [action.payload.scenarioIndex]: action.payload.answer },
         score: state.score + action.payload.points,
       };
+    }
     case 'REINICIAR':
       return initialState;
     default:

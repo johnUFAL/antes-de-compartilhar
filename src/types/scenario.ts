@@ -31,13 +31,17 @@ export interface Scenario {
 }
 
 export interface Resposta {
-    scenaroId: string;
+    scenarioId: string;
     acaoEscolhida: ActionType;
     correta: boolean;
 }
 
+export type NivelResposta = "ideal" | "aceitavel" | "arriscada";
+
 export interface Feedback {
     correto: boolean;
+    nivel: NivelResposta;
+    pontos: number;
     mensagem: string;
     scenario: Scenario;
 }
