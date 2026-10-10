@@ -26,17 +26,22 @@ Se um agente julgar necessário adicionar uma lib, deve justificar antes no PR, 
 ```
 src/
 ├── data/
-│   └── scenarios.ts        # conteúdo pedagógico: mensagens, sinais, fontes oficiais
+│   ├── scenarios.ts        # conteúdo pedagógico: mensagens, sinais, fontes oficiais
+│   ├── gatilhos.ts         # catálogo de técnicas de manipulação
+│   └── dicas.ts            # dicas exibidas no Resumo
 ├── types/
 │   └── scenario.ts         # Scenario, Action, Feedback
-├── state/
-│   └── AppContext.tsx      # reducer + provider do estado global
+├── context/
+│   ├── AppContext.tsx      # provider + hook useAppState
+│   └── appReducer.ts       # reducer (telas, índice, respostas, pontuação)
 ├── engine/
 │   └── evaluateAction.ts   # função pura: (scenario, action) => Feedback
 ├── components/
-│   ├── chat/                # ChatScreen, MessageBubble, ActionBar
+│   ├── layout/              # PhoneFrame (moldura única das telas)
+│   ├── chat/                # ChatScreen, MessageBubble, MessageMedia, ActionBar, TypingIndicator, GatilhoBadge
 │   ├── feedback/             # FeedbackModal, ProgressBar
 │   └── screens/               # IntroScreen, SummaryScreen
+├── tests/                   # Vitest + React Testing Library
 └── App.tsx
 ```
 
@@ -171,7 +176,24 @@ Um PR não deve ser aberto se `npm run build` falhar.
 
 Acesse o link para visualizar: [Figma antes de compartilhar](https://www.figma.com/design/wYfovuJjZoZcnCwkkdZRad/Antes-de-Compartilhar?node-id=1-30&t=l6pqwVmtPRCxSARU-1)
 
-## 12. Deploy
+## 12. Como rodar localmente
+
+```bash
+npm install
+npm run dev      # servidor de desenvolvimento
+npm run test     # testes (Vitest)
+npm run build    # build de produção
+```
+
+Roteiro de apresentação: [docs/roteiro-apresentacao.md](docs/roteiro-apresentacao.md).
+
+## 13. Créditos das fontes oficiais
+
+Os cenários são fictícios, mas as fontes de verificação indicadas são reais: TSE (Tribunal Superior
+Eleitoral), ANPD (Autoridade Nacional de Proteção de Dados) e o portal Fato ou Boato do TSE.
+A lista completa por cenário está em `src/data/scenarios.ts`.
+
+## 14. Deploy
 
 O projeto está hospedado no vercel e pode ser acessado pelo link a seguir:
 - [antes-de-compartilhar.vercel.app](antes-de-compartilhar.vercel.app)
