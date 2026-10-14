@@ -13,10 +13,12 @@ const ATRASO_DIGITANDO_MS = 900;
 
 function ChatCenario() {
   const { state, dispatch } = useAppState();
-  const indice = state.currentScenarioIndex;
-  const scenario = SCENARIOS[indice];
-  const resposta = state.answers[indice] as ActionType | undefined;
   const [digitando, setDigitando] = useState(true);
+  
+  const quantidadeDeFases = state.ordem.length;
+  const faseAtual = state.currentScenarioIndex;
+  const scenario = SCENARIOS[state.ordem[faseAtual]];
+  const resposta = state.answers[faseAtual] as ActionType | undefined;
 
   // Efeito de "digitando..." antes de cada mensagem (o componente remonta a cada cenário)
   useEffect(() => {
@@ -32,7 +34,7 @@ function ChatCenario() {
     const { pontos } = evaluateAction(scenario, acao);
     dispatch({
       type: 'REGISTRAR_RESPOSTA',
-      payload: { scenarioIndex: indice, answer: acao, points: pontos },
+      payload: { scenarioIndex: faseAtual, answer: acao, points: pontos },
     });
   }
 
@@ -45,10 +47,10 @@ function ChatCenario() {
             <p className="text-xs text-emerald-100">{digitando ? 'digitando...' : 'online'}</p>
           </div>
           <p className="text-sm font-medium" aria-hidden="true">
-            {indice + 1}/{SCENARIOS.length}
+            {faseAtual + 1}/{quantidadeDeFases}
           </p>
         </div>
-        <ProgressBar atual={indice + 1} total={SCENARIOS.length} />
+        <ProgressBar atual={faseAtual + 1} total={quantidadeDeFases} />
       </header>
 
       <main aria-live="polite" className="flex flex-1 flex-col gap-2 p-4">
@@ -61,7 +63,7 @@ function ChatCenario() {
         <FeedbackModal
           key={scenario.id}
           feedback={feedback}
-          ultimo={indice === SCENARIOS.length - 1}
+          ultimo={faseAtual === quantidadeDeFases - 1}
           onNext={() => dispatch({ type: 'AVANCAR_CENARIO' })}
         />
       )}

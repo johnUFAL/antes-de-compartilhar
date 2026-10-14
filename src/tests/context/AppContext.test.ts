@@ -5,6 +5,7 @@ import { appReducer, initialState, type AppState } from '../../context/appReduce
 const defaultState: AppState = {
   currentScreen: 'INTRO',
   currentScenarioIndex: 0,
+  ordem: SCENARIOS.map((_, i) => i),
   answers: {},
   score: 0,
 };
@@ -36,6 +37,7 @@ describe('appReducer', () => {
     const modifiedState: AppState = {
       currentScreen: 'SUMMARY',
       currentScenarioIndex: 5,
+      ordem: [2, 0, 1],
       answers: { 0: 'A' },
       score: 50,
     };
@@ -58,4 +60,11 @@ describe('appReducer', () => {
     expect(duas.answers[0]).toBe('pesquisar');
     expect(duas.score).toBe(10);
   });
+});
+
+it('INICIAR começa a rodada com a ordem recebida e zera o progresso', () => {
+  const sujo: AppState = { ...defaultState, currentScreen: 'SUMMARY', currentScenarioIndex: 3, answers: { 0: 'x' }, score: 20 };
+  const ordem = SCENARIOS.map((_, i) => i).reverse();
+  const state = appReducer(sujo, { type: 'INICIAR', payload: { ordem } });
+  expect(state).toEqual({ ...initialState, currentScreen: 'SIMULATOR', ordem });
 });
