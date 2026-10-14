@@ -7,6 +7,9 @@ import type { Scenario } from "../types/scenario";
 
 export const SCENARIOS: Scenario[] = [
   {
+    // ---------------------------------------------------------------------------
+    // POLITICA 
+    // ---------------------------------------------------------------------------
     id: "cenario-01",
     remetente: "Grupo da Igreja",
     grupo: "Grupo da Igreja",
@@ -259,5 +262,287 @@ export const SCENARIOS: Scenario[] = [
     explicacao:
       "Resultados fabricados antes da apuração oficial tentam gerar euforia, desânimo ou até contestação " +
       "precoce do processo — divulgar antecipadamente de forma falsa é uma tática usada para manipular a percepção pública.",
+  },
+  // ---------------------------------------------------------------------------
+  // SAÚDE
+  // ---------------------------------------------------------------------------
+  {
+    id: "cenario-11",
+    remetente: "Tia Marta",
+    grupo: "Família Unida",
+    horario: "09:41",
+    conteudo: {
+      tipo: "texto",
+      texto:
+        "URGENTE!! Um médico americano descobriu que bicarbonato com limão CURA o câncer e os laboratórios " +
+        "escondem isso de você. Manda pra quem você ama, pode salvar uma vida!",
+    },
+    gatilhos: ["medo", "autoridade-falsa", "corrente"],
+    acaoIdeal: "pesquisar",
+    sinalDeAlerta:
+      "Cura milagrosa para doença grave, \"médico\" sem nome nem instituição e a acusação de que \"escondem de você\" são marcas clássicas de desinformação em saúde.",
+    ondeVerificar:
+      "Buscar o suposto estudo ou médico em fontes oficiais de saúde e em agências de checagem antes de repassar.",
+    fonteOficial: {
+      nome: "Ministério da Saúde — Saúde com Ciência",
+      url: "https://www.gov.br/saude/pt-br/assuntos/saude-com-ciencia",
+    },
+    explicacao:
+      "A mensagem mistura medo (doença grave) com falsa autoridade (médico anônimo) e pede repasse emocional. " +
+      "Acreditar em \"truques caseiros\" pode levar alguém a abandonar o tratamento de verdade.",
+  },
+  {
+    id: "cenario-12",
+    remetente: "Síndico Roberto",
+    grupo: "Condomínio Jardim das Flores",
+    horario: "14:20",
+    conteudo: {
+      tipo: "imagem",
+      texto:
+        "Imagem com logotipo parecido com o de um órgão de saúde e o texto: \"COMUNICADO OFICIAL: lote de vacinas " +
+        "será recolhido após mortes. Não leve seus filhos ao posto. Compartilhe!\"",
+    },
+    gatilhos: ["autoridade-falsa", "medo", "urgencia"],
+    acaoIdeal: "denunciar",
+    sinalDeAlerta:
+      "Um \"comunicado oficial\" enviado só como imagem, sem link para o site do órgão, sem número de nota e sem data, é forte indício de montagem.",
+    ondeVerificar:
+      "Procurar o comunicado nos canais oficiais do Ministério da Saúde. Se não estiver lá, é falso.",
+    fonteOficial: {
+      nome: "Ministério da Saúde — Segurança das Vacinas",
+      url: "https://www.gov.br/saude/pt-br/vacinacao/esavi",
+    },
+    explicacao:
+      "Imitar a identidade visual de um órgão público dá aparência de legitimidade. A imagem usa medo e urgência " +
+      "para você repassar antes de checar — e pode afastar crianças da vacinação. Denunciar ajuda a frear a circulação.",
+  },
+  {
+    id: "cenario-13",
+    remetente: "Dona Lúcia",
+    grupo: "Mães da Escola",
+    horario: "18:05",
+    conteudo: {
+      tipo: "audio",
+      texto:
+        "\"Gente, uma conhecida que trabalha num posto de saúde me mandou isso: não levem as crianças amanhã, " +
+        "estão aplicando um lote com problema. Ela pediu pra não falar o nome dela. Passa pra todas as mães!\"",
+      duracao: "0:29",
+    },
+    gatilhos: ["medo", "corrente"],
+    acaoIdeal: "pesquisar",
+    sinalDeAlerta:
+      "Fonte anônima (\"uma conhecida\") com pedido de sigilo e de repasse em massa, sem nenhuma informação verificável.",
+    ondeVerificar:
+      "Consultar as perguntas frequentes e os canais oficiais do Ministério da Saúde, ou ligar para a unidade de saúde do bairro.",
+    fonteOficial: {
+      nome: "Ministério da Saúde — Dúvidas frequentes (Saúde com Ciência)",
+      url: "https://www.gov.br/saude/pt-br/assuntos/saude-com-ciencia/duvidas-frequentes",
+    },
+    explicacao:
+      "Áudios de \"alguém que trabalha lá\" parecem confiáveis por serem pessoais, mas não podem ser checados. " +
+      "A combinação de medo com crianças e pedido de sigilo é um padrão frequente em boatos de saúde.",
+  },
+
+  // ---------------------------------------------------------------------------
+  // GOLPES FINANCEIROS
+  // ---------------------------------------------------------------------------
+  {
+    id: "cenario-14",
+    remetente: "Banco Horizonte",
+    grupo: "Banco Horizonte",
+    horario: "11:33",
+    conteudo: {
+      tipo: "texto",
+      texto:
+        "Seu Pix foi BLOQUEADO por atividade suspeita. Regularize em até 1 hora para evitar o cancelamento " +
+        "da sua conta: bit.ly/regulariza-pix-agora",
+    },
+    gatilhos: ["urgencia", "medo", "autoridade-falsa"],
+    acaoIdeal: "denunciar",
+    sinalDeAlerta:
+      "Prazo curto, ameaça de cancelamento e link encurtado: o tripé do golpe de phishing bancário.",
+    ondeVerificar:
+      "Abrir o aplicativo do seu banco digitando o endereço você mesmo, ou ligar para o número impresso no cartão. Nunca usar o link recebido.",
+    fonteOficial: {
+      nome: "Banco Central do Brasil",
+      url: "https://www.bcb.gov.br",
+    },
+    explicacao:
+      "O golpista imita um banco para criar pânico e levar você a um site falso que rouba senhas. Em situações de medo ou pressa, o ideal é parar e confirmar por um canal que você mesmo abriu.",
+  },
+  {
+    id: "cenario-15",
+    remetente: "Mãe (número novo)",
+    grupo: "Mãe (número novo)",
+    horario: "16:50",
+    conteudo: {
+      tipo: "audio",
+      texto:
+        "\"Oi, filho, sou eu. Meu celular quebrou, estou usando esse número novo. Preciso pagar um boleto " +
+        "hoje e estou sem acesso ao app do banco. Você consegue fazer um Pix pra mim? Depois te explico.\"",
+      duracao: "0:19",
+    },
+    gatilhos: ["urgencia", "medo"],
+    acaoIdeal: "pesquisar",
+    sinalDeAlerta:
+      "Pedido de dinheiro vindo de um \"número novo\", com urgência e sem explicação. A voz pode ser imitada com inteligência artificial.",
+    ondeVerificar:
+      "Ligar para o número antigo ou confirmar por outro canal (outro familiar, chamada de vídeo) antes de qualquer pagamento.",
+    fonteOficial: {
+      nome: "Banco Central do Brasil",
+      url: "https://www.bcb.gov.br",
+    },
+    explicacao:
+      "No golpe do falso parente, o criminoso usa a confiança familiar e a pressa para evitar que você confirme. Ligar para quem supostamente pediu o dinheiro desmonta o golpe.",
+  },
+  {
+    id: "cenario-16",
+    remetente: "Número desconhecido",
+    grupo: "Número desconhecido",
+    horario: "10:12",
+    conteudo: {
+      tipo: "imagem",
+      texto:
+        "Print de um comprovante de Pix de R$ 850,00 em seu nome e a mensagem: \"Oi, fiz um Pix pra você por " +
+        "engano, pode devolver pra essa outra conta? Estou precisando muito.\"",
+    },
+    gatilhos: ["urgencia"],
+    acaoIdeal: "pesquisar",
+    sinalDeAlerta:
+      "Comprovante enviado só como imagem e pedido de devolução para uma conta de terceiros, não para a conta de origem.",
+    ondeVerificar:
+      "Conferir no extrato do aplicativo do seu banco se o valor realmente entrou. Se entrou, devolver só pelo caminho oficial do banco, nunca por transferência manual.",
+    fonteOficial: {
+      nome: "Banco Central do Brasil",
+      url: "https://www.bcb.gov.br",
+    },
+    explicacao:
+      "Comprovantes são fáceis de falsificar, e a pessoa pode nem ter depositado nada. Devolver para outra conta é o golpe do \"Pix errado\": o valor some do seu bolso e o do golpista nunca existiu.",
+  },
+  {
+    id: "cenario-17",
+    remetente: "Canal Dinheiro Fácil",
+    grupo: "Investidores do Zap",
+    horario: "20:30",
+    conteudo: {
+      tipo: "video",
+      texto:
+        "Vídeo de um \"apresentador de telejornal\" dizendo que uma nova plataforma devolve R$ 5.000 a quem " +
+        "investir R$ 500 hoje. As vagas acabam em poucas horas.",
+      duracao: "0:57",
+    },
+    gatilhos: ["autoridade-falsa", "urgencia"],
+    acaoIdeal: "denunciar",
+    sinalDeAlerta:
+      "Retorno garantido e altíssimo em pouco tempo, prazo curto e um rosto conhecido \"recomendando\". Rostos e vozes podem ser falsificados por IA.",
+    ondeVerificar:
+      "Procurar a empresa na lista de instituições autorizadas pelos órgãos reguladores do mercado financeiro e checar se o veículo citado publicou a matéria.",
+    fonteOficial: {
+      nome: "CVM — Comissão de Valores Mobiliários",
+      url: "https://www.gov.br/cvm/pt-br",
+    },
+    explicacao:
+      "Promessas de lucro garantido são o sinal mais comum de fraude de investimento. O vídeo usa uma falsa autoridade para dar confiança e a urgência para impedir você de pesquisar.",
+  },
+
+  // ---------------------------------------------------------------------------
+  // OUTROS TEMAS
+  // ---------------------------------------------------------------------------
+  {
+    id: "cenario-18",
+    remetente: "Ju Colega",
+    grupo: "Turma da Faculdade",
+    horario: "13:15",
+    conteudo: {
+      tipo: "texto",
+      texto:
+        "Galera, achei uma vaga de home office pagando R$ 300 por dia, sem experiência! Só precisa pagar " +
+        "R$ 49 de taxa de cadastro. Eu já me inscrevi, corre que as vagas são limitadas!",
+    },
+    gatilhos: ["urgencia"],
+    acaoIdeal: "denunciar",
+    sinalDeAlerta:
+      "Salário alto sem exigir experiência e cobrança de taxa antecipada para \"garantir\" a vaga.",
+    ondeVerificar:
+      "Pesquisar o nome da empresa e a reputação dela. Empresas sérias não cobram taxa de quem busca emprego.",
+    fonteOficial: {
+      nome: "Consumidor.gov.br",
+      url: "https://www.consumidor.gov.br",
+    },
+    explicacao:
+      "O golpe do falso emprego lucra com a taxa de cadastro e, muitas vezes, com os dados pessoais coletados. Quando a mensagem vem de uma pessoa conhecida, a chance de a conta ter sido invadida também cresce.",
+  },
+  {
+    id: "cenario-19",
+    remetente: "Seu Antônio",
+    grupo: "Vizinhança Segura",
+    horario: "21:15",
+    conteudo: {
+      tipo: "video",
+      texto:
+        "Vídeo de uma rua sendo tomada por uma enchente, com a legenda: \"AGORA na nossa cidade!! Cuidado, " +
+        "fiquem em casa!\" Não aparece nome de rua, data nem veículo de imprensa.",
+      duracao: "0:37",
+    },
+    gatilhos: ["medo", "urgencia"],
+    acaoIdeal: "pesquisar",
+    sinalDeAlerta:
+      "Vídeo sem data, local ou fonte, apresentado como \"agora\". Vídeos antigos ou de outras cidades são reaproveitados em desastres.",
+    ondeVerificar:
+      "Conferir a Defesa Civil local e veículos de imprensa da região. Uma busca reversa pelas imagens mostra se o vídeo já circulou antes.",
+    fonteOficial: {
+      nome: "Aos Fatos",
+      url: "https://www.aosfatos.org",
+    },
+    explicacao:
+      "Conteúdo fora de contexto é uma das técnicas mais comuns: o material é real, mas de outra época ou lugar. Medo e urgência fazem a pessoa repassar sem checar, o que atrapalha o alerta verdadeiro.",
+  },
+  {
+    id: "cenario-20",
+    remetente: "Prima Bia",
+    grupo: "Família Unida",
+    horario: "07:00",
+    conteudo: {
+      tipo: "texto",
+      texto:
+        "Se você não repassar esta mensagem para 15 pessoas em 10 minutos, vai ter 7 anos de azar. " +
+        "Uma menina ignorou e perdeu tudo!",
+    },
+    gatilhos: ["medo", "corrente", "urgencia"],
+    acaoIdeal: "ignorar",
+    sinalDeAlerta:
+      "Ameaça sobrenatural e prazo absurdo para repassar a um número fixo de pessoas: é uma corrente clássica, sem nada a verificar.",
+    ondeVerificar:
+      "Não há o que checar: não existe fonte, fato nem informação útil. Basta reconhecer o padrão de corrente.",
+    fonteOficial: {
+      nome: "Agência Lupa",
+      url: "https://lupa.news",
+    },
+    explicacao:
+      "Correntes usam medo para se espalhar sozinhas. Aqui ignorar é a resposta ideal: não vale pesquisar nem denunciar, pois não há dano nem informação para corrigir.",
+  },
+  {
+    id: "cenario-21",
+    remetente: "Posto de Saúde Central",
+    grupo: "Notícias do Bairro",
+    horario: "09:00",
+    conteudo: {
+      tipo: "imagem",
+      texto:
+        "Card colorido de campanha de vacinação com datas, público-alvo e a frase \"Consulte o calendário completo " +
+        "no site do Ministério da Saúde\". Enviado por uma conta verificada do posto de saúde do bairro.",
+    },
+    gatilhos: [],
+    acaoIdeal: "compartilhar",
+    sinalDeAlerta:
+      "Aqui não há sinais de alerta: o conteúdo informa datas e público-alvo, indica onde conferir e vem de uma conta verificada do serviço de saúde.",
+    ondeVerificar:
+      "Conferir o calendário completo no site do Ministério da Saúde, o mesmo que a própria mensagem indica.",
+    fonteOficial: {
+      nome: "Ministério da Saúde — Calendário de Vacinação",
+      url: "https://www.gov.br/saude/pt-br/vacinacao/calendario",
+    },
+    explicacao:
+      "Nem toda mensagem é desinformação. Informações de utilidade pública, de fonte identificável e verificável, vale compartilhar. Desconfiar de tudo também é um problema: a boa informação precisa circular.",
   },
 ];

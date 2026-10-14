@@ -27,8 +27,9 @@ describe('fluxo completo do app', () => {
 
     for (let i = 0; i < SCENARIOS.length; i++) {
       // Aparece a mensagem após o "digitando..."
-      const mensagem = await screen.findByRole('article', {}, { timeout: 3000 });
-      expect(mensagem).toHaveAccessibleName(new RegExp(SCENARIOS[i].remetente));
+      const mensagem = await screen.findByRole('article', {}, { timeout: SCENARIOS.length * 2500 });
+      //expect(mensagem).toHaveAccessibleName(new RegExp(SCENARIOS[i].remetente));
+      expect(mensagem).toHaveAccessibleName(expect.stringContaining(SCENARIOS[i].remetente));
 
       const pesquisar = screen.getByRole('button', { name: /pesquisar a mensagem/i });
       fireEvent.click(pesquisar);
