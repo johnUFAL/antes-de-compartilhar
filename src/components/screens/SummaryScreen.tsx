@@ -9,7 +9,9 @@ import GatilhoBadge from '../chat/GatilhoBadge';
 export default function SummaryScreen() {
   const { state, dispatch } = useAppState();
 
-  const niveis = SCENARIOS.map((cenario, i) => {
+  const cenarios = state.ordem.map((i) => SCENARIOS[i]);
+
+  const niveis = cenarios.map((cenario, i) => {
     const acao = state.answers[i] as ActionType | undefined;
     return acao ? classificarAcao(cenario, acao) : null;
   });
@@ -17,10 +19,10 @@ export default function SummaryScreen() {
 
   // Gatilhos dos cenários em que a pessoa não escolheu a ação ideal
   const gatilhosParaRevisar = new Set<GatilhoId>();
-  SCENARIOS.forEach((cenario, i) => {
+  cenarios.forEach((cenario, i) => {
     if (niveis[i] !== 'ideal') cenario.gatilhos.forEach((g) => gatilhosParaRevisar.add(g));
   });
-  const todosGatilhos = new Set<GatilhoId>(SCENARIOS.flatMap((c) => c.gatilhos));
+  const todosGatilhos = new Set<GatilhoId>(cenarios.flatMap((c) => c.gatilhos));
   const revisar = gatilhosParaRevisar.size > 0;
 
   return (

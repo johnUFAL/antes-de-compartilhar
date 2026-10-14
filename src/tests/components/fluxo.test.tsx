@@ -1,8 +1,13 @@
-import { describe, it, expect } from 'vitest';
+import { describe, it, expect, vi } from 'vitest';
 import { fireEvent, render, screen } from '@testing-library/react';
 import App from '../../App';
 import { AppProvider } from '../../context/AppContext';
 import { SCENARIOS } from '../../data/scenarios';
+
+// Mantém a ordem sequencial para o teste poder comparar com SCENARIOS[i]
+vi.mock('../../engine/sortearOrdem', () => ({
+  randomList: (total: number) => Array.from({ length: total }, (_, i) => i),
+}));
 
 function renderizar() {
   return render(

@@ -1,6 +1,7 @@
 import { MessageCircle } from 'lucide-react';
 import { useAppState } from '../../context/AppContext';
 import { SCENARIOS } from '../../data/scenarios';
+import { randomList } from '../../engine/sortearOrdem';
 
 const PASSOS = [
   `Você vai receber ${SCENARIOS.length} mensagens fictícias, como em um grupo de WhatsApp.`,
@@ -31,7 +32,7 @@ export default function IntroScreen() {
       </p>
       <button
         type="button"
-        onClick={() => dispatch({ type: 'SET_SCREEN', payload: 'SIMULATOR' })}
+        onClick={() => dispatch({ type: 'INICIAR', payload: { ordem: randomList(SCENARIOS.length) } })}
         className="w-full rounded-lg bg-zap-header px-4 py-3 text-lg font-semibold text-white transition hover:bg-emerald-900 focus:outline-none focus-visible:ring-4 focus-visible:ring-yellow-400"
       >
         Começar
