@@ -18,6 +18,7 @@ export default function FeedbackModal({ feedback, ultimo, onNext }: Props) {
   const { scenario, nivel, mensagem } = feedback;
   const { Icone, titulo, faixa } = ESTILOS[nivel];
   const botaoRef = useRef<HTMLButtonElement>(null);
+  const legitimo = scenario.acaoIdeal === 'compartilhar';
 
   // Leva o foco ao botão para quem usa teclado ou leitor de tela
   useEffect(() => {
@@ -42,7 +43,9 @@ export default function FeedbackModal({ feedback, ultimo, onNext }: Props) {
         <div className="space-y-3 p-4 text-left text-sm text-slate-800">
           <p className="font-semibold">{mensagem}</p>
           <section>
-            <h3 className="font-bold text-red-800">Sinal de alerta</h3>
+            <h3 className={`font-bold ${legitimo ? 'text-emerald-800' : 'text-red-800'}`}>
+              {legitimo ? 'Por que é confiável' : 'Sinal de alerta'}
+            </h3>
             <p>{scenario.sinalDeAlerta}</p>
           </section>
           <section>
@@ -63,7 +66,9 @@ export default function FeedbackModal({ feedback, ultimo, onNext }: Props) {
             </a>
           </section>
           <section>
-            <h3 className="font-bold text-purple-800">Por que engana</h3>
+            <h3 className="font-bold text-purple-800">
+              {legitimo ? 'Por que vale compartilhar' : 'Por que engana'}
+            </h3>
             <p>{scenario.explicacao}</p>
           </section>
         </div>
