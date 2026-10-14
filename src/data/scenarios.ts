@@ -53,7 +53,7 @@ export const SCENARIOS: Scenario[] = [
       "Consultar as informações oficiais sobre os testes públicos de segurança e auditoria das urnas.",
     fonteOficial: {
       nome: "TSE — Segurança da urna eletrônica",
-      url: "https://www.tse.jus.br/eleicoes/urna-eletronica/seguranca",
+      url: "https://www.justicaeleitoral.jus.br/fato-ou-boato/#urna-eletronica",
     },
     explicacao:
       "Alegações de fraude que citam fontes anônimas exploram o medo de que o voto \"não valha nada\", " +
@@ -78,7 +78,7 @@ export const SCENARIOS: Scenario[] = [
       "Buscar o mesmo fato em pelo menos dois veículos de imprensa estabelecidos antes de acreditar.",
     fonteOficial: {
       nome: "TSE — Candidaturas e candidatos",
-      url: "https://www.tse.jus.br/eleicoes/candidatos",
+      url: "https://divulgacandcontas.tse.jus.br/divulga/#/home",
     },
     explicacao:
       "Prints de manchete são fáceis de forjar em qualquer editor de imagem. A ausência de um link " +
@@ -103,7 +103,7 @@ export const SCENARIOS: Scenario[] = [
       "Verificar comunicados oficiais sobre proteção de dados eleitorais nos canais do governo.",
     fonteOficial: {
       nome: "ANPD — Autoridade Nacional de Proteção de Dados",
-      url: "https://www.gov.br/anpd/pt-br",
+      url: "https://www.gov.br/anpd/pt-br/assuntos/marco-civil-da-internet",
     },
     explicacao:
       "Documentos falsos sobre dados pessoais exploram o medo de vigilância e vazamento para gerar " +
@@ -129,7 +129,7 @@ export const SCENARIOS: Scenario[] = [
       "Verificar se a pessoa tem vínculo real com instituições eleitorais e se a alegação já foi checada por agências de fact-checking.",
     fonteOficial: {
       nome: "TSE — Fato ou Boato",
-      url: "https://www.tse.jus.br/comunicacao/fato-ou-boato",
+      url: "https://www.justicaeleitoral.jus.br/fato-ou-boato/#urna-eletronica",
     },
     explicacao:
       "Vídeos com autoridade autoproclamada e alegações graves sem prova auditável costumam viralizar " +
@@ -181,7 +181,7 @@ export const SCENARIOS: Scenario[] = [
       "Consultar o local de votação diretamente no site oficial usando o título de eleitor.",
     fonteOficial: {
       nome: "TSE — Local de votação",
-      url: "https://www.tse.jus.br/eleicoes/local-de-votacao",
+      url: "https://www.tse.jus.br/servicos-eleitorais/autoatendimento-eleitoral#/",
     },
     explicacao:
       "Mudanças reais de local de votação são sempre publicadas oficialmente. Um áudio informal e não " +
@@ -207,7 +207,7 @@ export const SCENARIOS: Scenario[] = [
       "O voto no Brasil não precisa de nenhuma \"revalidação\" por aplicativo; verificar apenas os canais oficiais do TSE.",
     fonteOficial: {
       nome: "TSE — Aplicativo e-Título",
-      url: "https://www.tse.jus.br/servicos-eleitorais/aplicativos",
+      url: "https://www.tse.jus.br/servicos-eleitorais/e-titulo-perguntas-frequentes/1-o-que-e-o-e-titulo",
     },
     explicacao:
       "Esse padrão imita golpes financeiros: cria um procedimento falso e urgente, usando uma suposta " +
@@ -232,7 +232,7 @@ export const SCENARIOS: Scenario[] = [
       "Consultar como votos nulos e brancos são de fato contabilizados na legislação eleitoral vigente.",
     fonteOficial: {
       nome: "TSE — Fato ou Boato",
-      url: "https://www.tse.jus.br/comunicacao/fato-ou-boato",
+      url: "https://www.justicaeleitoral.jus.br/fato-ou-boato/",
     },
     explicacao:
       "Essa é uma desinformação recorrente em períodos eleitorais no Brasil: votos nulos/brancos não " +
@@ -240,28 +240,27 @@ export const SCENARIOS: Scenario[] = [
   },
   {
     id: "cenario-10",
-    remetente: "Página Resultado Rápido",
-    grupo: "Grupo Acompanhando a Eleição",
-    horario: "17:12",
+    remetente: "Tio Ricardo",
+    grupo: "Família Unida",
+    horario: "10:05",
     conteudo: {
-      tipo: "imagem",
+      tipo: "texto",
       texto:
-        "Print de \"resultado parcial\" mostrando um candidato fictício vencendo, horas antes do horário oficial de apuração",
-      mediaUrl: "https://placehold.co/600x400?text=print-resultado-parcial-falso",
+        "Pessoal, uma dica pra quem ainda não conferiu: dá pra consultar o local de votação pelo site do TSE " +
+        "ou pelo app e-Título, usando o título ou o CPF. Sem pressa, mas vale olhar antes do dia.",
     },
-    gatilhos: ["urgencia", "autoridade-falsa"],
-    acaoIdeal: "denunciar",
+    gatilhos: [],
+    acaoIdeal: "compartilhar",
     sinalDeAlerta:
-      "Resultado divulgado antes do horário oficial de apuração, em formato de print sem identificação de fonte.",
+      "Aqui não há sinais de alerta: a mensagem indica o canal oficial (site do TSE e app e-Título), não pede dados nem repasse em massa e não cria pressa.",
     ondeVerificar:
-      "Resultados oficiais só são publicados no horário e canal definidos pelo TSE, nunca antecipados em grupos de mensagem.",
+      "Conferir no site do TSE as opções de consulta do local de votação, as mesmas que a mensagem cita.",
     fonteOficial: {
-      nome: "TSE — Resultados das eleições",
-      url: "https://resultados.tse.jus.br",
+      nome: "TSE — Local de votação",
+      url: "https://www.tse.jus.br/servicos-eleitorais/e-titulo-perguntas-frequentes/1-o-que-e-o-e-titulo",
     },
     explicacao:
-      "Resultados fabricados antes da apuração oficial tentam gerar euforia, desânimo ou até contestação " +
-      "precoce do processo — divulgar antecipadamente de forma falsa é uma tática usada para manipular a percepção pública.",
+      "Uma boa informação pode ser reconhecida pelo que ela não faz: não ameaça, não apressa e aponta para a fonte oficial. Compartilhar mensagens assim ajuda as pessoas a se informarem pelo canal certo.",
   },
   // ---------------------------------------------------------------------------
   // SAÚDE
@@ -293,7 +292,7 @@ export const SCENARIOS: Scenario[] = [
   },
   {
     id: "cenario-12",
-    remetente: "Síndico Roberto",
+    remetente: "Síndico Rian",
     grupo: "Condomínio Jardim das Flores",
     horario: "14:20",
     conteudo: {
@@ -318,29 +317,29 @@ export const SCENARIOS: Scenario[] = [
   },
   {
     id: "cenario-13",
-    remetente: "Dona Lúcia",
-    grupo: "Mães da Escola",
-    horario: "18:05",
+    remetente: "Agente Cláudia (Posto Vila Nova)",
+    grupo: "Moradores da Vila Nova",
+    horario: "08:30",
     conteudo: {
       tipo: "audio",
       texto:
-        "\"Gente, uma conhecida que trabalha num posto de saúde me mandou isso: não levem as crianças amanhã, " +
-        "estão aplicando um lote com problema. Ela pediu pra não falar o nome dela. Passa pra todas as mães!\"",
-      duracao: "0:29",
+        "\"Bom dia, pessoal, aqui é a Cláudia, agente de saúde do posto da Vila Nova. Na campanha de vacinação, " +
+        "o posto vai abrir uma hora mais cedo. Quem tiver dúvida sobre a vacina de cada idade pode olhar o " +
+        "calendário no site do Ministério da Saúde ou passar aqui no posto.\"",
+      duracao: "0:24",
     },
-    gatilhos: ["medo", "corrente"],
-    acaoIdeal: "pesquisar",
+    gatilhos: [],
+    acaoIdeal: "compartilhar",
     sinalDeAlerta:
-      "Fonte anônima (\"uma conhecida\") com pedido de sigilo e de repasse em massa, sem nenhuma informação verificável.",
+      "Aqui não há sinais de alerta: a pessoa se identifica com nome e local de trabalho, a informação é prática e verificável no posto, e a mensagem indica o calendário oficial para conferir.",
     ondeVerificar:
-      "Consultar as perguntas frequentes e os canais oficiais do Ministério da Saúde, ou ligar para a unidade de saúde do bairro.",
+      "Conferir o calendário no site do Ministério da Saúde ou perguntar direto na unidade de saúde do bairro.",
     fonteOficial: {
-      nome: "Ministério da Saúde — Dúvidas frequentes (Saúde com Ciência)",
-      url: "https://www.gov.br/saude/pt-br/assuntos/saude-com-ciencia/duvidas-frequentes",
+      nome: "Ministério da Saúde — Calendário de Vacinação",
+      url: "https://www.gov.br/saude/pt-br/vacinacao/calendario",
     },
     explicacao:
-      "Áudios de \"alguém que trabalha lá\" parecem confiáveis por serem pessoais, mas não podem ser checados. " +
-      "A combinação de medo com crianças e pedido de sigilo é um padrão frequente em boatos de saúde.",
+      "Diferente dos áudios de \"uma conhecida que trabalha lá\", aqui a pessoa e o local são identificáveis, e qualquer um pode confirmar com uma ida ao posto. Identificação e verificabilidade são o que separam um aviso útil de um boato.",
   },
 
   // ---------------------------------------------------------------------------
@@ -365,20 +364,20 @@ export const SCENARIOS: Scenario[] = [
       "Abrir o aplicativo do seu banco digitando o endereço você mesmo, ou ligar para o número impresso no cartão. Nunca usar o link recebido.",
     fonteOficial: {
       nome: "Banco Central do Brasil",
-      url: "https://www.bcb.gov.br",
+      url: "https://www.bcb.gov.br/estabilidadefinanceira/pix",
     },
     explicacao:
       "O golpista imita um banco para criar pânico e levar você a um site falso que rouba senhas. Em situações de medo ou pressa, o ideal é parar e confirmar por um canal que você mesmo abriu.",
   },
   {
     id: "cenario-15",
-    remetente: "Mãe (número novo)",
-    grupo: "Mãe (número novo)",
+    remetente: "Daniel Vorcaro (número novo)",
+    grupo: "Daniel Vorcaro (número novo)",
     horario: "16:50",
     conteudo: {
       tipo: "audio",
       texto:
-        "\"Oi, filho, sou eu. Meu celular quebrou, estou usando esse número novo. Preciso pagar um boleto " +
+        "\"Oi, mano, sou eu o seu amigo. Meu celular quebrou, estou usando esse número novo. Preciso pagar um boleto " +
         "hoje e estou sem acesso ao app do banco. Você consegue fazer um Pix pra mim? Depois te explico.\"",
       duracao: "0:19",
     },
@@ -390,34 +389,35 @@ export const SCENARIOS: Scenario[] = [
       "Ligar para o número antigo ou confirmar por outro canal (outro familiar, chamada de vídeo) antes de qualquer pagamento.",
     fonteOficial: {
       nome: "Banco Central do Brasil",
-      url: "https://www.bcb.gov.br",
+      url: "https://www.bcb.gov.br/estabilidadefinanceira/pix",
     },
     explicacao:
       "No golpe do falso parente, o criminoso usa a confiança familiar e a pressa para evitar que você confirme. Ligar para quem supostamente pediu o dinheiro desmonta o golpe.",
   },
   {
     id: "cenario-16",
-    remetente: "Número desconhecido",
-    grupo: "Número desconhecido",
-    horario: "10:12",
+    remetente: "Guilherme (namorado de trabalho)",
+    grupo: "Equipe Financeiro",
+    horario: "12:40",
     conteudo: {
-      tipo: "imagem",
+      tipo: "texto",
       texto:
-        "Print de um comprovante de Pix de R$ 850,00 em seu nome e a mensagem: \"Oi, fiz um Pix pra você por " +
-        "engano, pode devolver pra essa outra conta? Estou precisando muito.\"",
+        "Dica de segurança pra vocês: no aplicativo do seu banco dá pra definir um limite de valor para o Pix, " +
+        "inclusive para o período da noite. Se alguém entrar na sua conta, o prejuízo fica menor. " +
+        "Vale olhar as configurações do app do seu banco.",
     },
-    gatilhos: ["urgencia"],
-    acaoIdeal: "pesquisar",
+    gatilhos: [],
+    acaoIdeal: "compartilhar",
     sinalDeAlerta:
-      "Comprovante enviado só como imagem e pedido de devolução para uma conta de terceiros, não para a conta de origem.",
+      "Aqui não há sinais de alerta: é uma dica de proteção que você mesmo executa no aplicativo oficial do seu banco, sem links, sem pedir dados e sem pressa.",
     ondeVerificar:
-      "Conferir no extrato do aplicativo do seu banco se o valor realmente entrou. Se entrou, devolver só pelo caminho oficial do banco, nunca por transferência manual.",
+      "Abrir o aplicativo do seu próprio banco e procurar a opção de limites do Pix, ou consultar o Banco Central para orientações de segurança.",
     fonteOficial: {
       nome: "Banco Central do Brasil",
-      url: "https://www.bcb.gov.br",
+      url: "https://www.bcb.gov.br/meubc/bcprotege",
     },
     explicacao:
-      "Comprovantes são fáceis de falsificar, e a pessoa pode nem ter depositado nada. Devolver para outra conta é o golpe do \"Pix errado\": o valor some do seu bolso e o do golpista nunca existiu.",
+      "Dicas de segurança confiáveis mandam você agir dentro de canais que você mesmo abre, e não em links recebidos. Compartilhar esse tipo de orientação ajuda a reduzir o prejuízo caso alguém caia em um golpe.",
   },
   {
     id: "cenario-17",
@@ -439,7 +439,7 @@ export const SCENARIOS: Scenario[] = [
       "Procurar a empresa na lista de instituições autorizadas pelos órgãos reguladores do mercado financeiro e checar se o veículo citado publicou a matéria.",
     fonteOficial: {
       nome: "CVM — Comissão de Valores Mobiliários",
-      url: "https://www.gov.br/cvm/pt-br",
+      url: "https://sac.cvm.gov.br/csm",
     },
     explicacao:
       "Promessas de lucro garantido são o sinal mais comum de fraude de investimento. O vídeo usa uma falsa autoridade para dar confiança e a urgência para impedir você de pesquisar.",
@@ -450,7 +450,7 @@ export const SCENARIOS: Scenario[] = [
   // ---------------------------------------------------------------------------
   {
     id: "cenario-18",
-    remetente: "Ju Colega",
+    remetente: "Jão Duarte",
     grupo: "Turma da Faculdade",
     horario: "13:15",
     conteudo: {
@@ -467,14 +467,14 @@ export const SCENARIOS: Scenario[] = [
       "Pesquisar o nome da empresa e a reputação dela. Empresas sérias não cobram taxa de quem busca emprego.",
     fonteOficial: {
       nome: "Consumidor.gov.br",
-      url: "https://www.consumidor.gov.br",
+      url: "https://consumidor.gov.br/pages/conteudo/publico/1",
     },
     explicacao:
       "O golpe do falso emprego lucra com a taxa de cadastro e, muitas vezes, com os dados pessoais coletados. Quando a mensagem vem de uma pessoa conhecida, a chance de a conta ter sido invadida também cresce.",
   },
   {
     id: "cenario-19",
-    remetente: "Seu Antônio",
+    remetente: "Seu Novaes",
     grupo: "Vizinhança Segura",
     horario: "21:15",
     conteudo: {
@@ -499,27 +499,27 @@ export const SCENARIOS: Scenario[] = [
   },
   {
     id: "cenario-20",
-    remetente: "Prima Bia",
-    grupo: "Família Unida",
+    remetente: "Pascal",
+    grupo: "Família Pingola",
     horario: "07:00",
     conteudo: {
       tipo: "texto",
       texto:
-        "Se você não repassar esta mensagem para 15 pessoas em 10 minutos, vai ter 7 anos de azar. " +
-        "Uma menina ignorou e perdeu tudo!",
+        "Novidade! Quem repassar esta mensagem para 10 contatos até a meia-noite ganha o WhatsApp dourado, " +
+        "com cores exclusivas. Quem não repassar continua com a versão comum!",
     },
-    gatilhos: ["medo", "corrente", "urgencia"],
+    gatilhos: ["corrente", "urgencia"],
     acaoIdeal: "ignorar",
     sinalDeAlerta:
-      "Ameaça sobrenatural e prazo absurdo para repassar a um número fixo de pessoas: é uma corrente clássica, sem nada a verificar.",
+      "Prêmio ou \"recurso exclusivo\" em troca de repassar a mensagem para um número fixo de contatos, com prazo para cumprir: é uma corrente, sem fonte nem informação a verificar.",
     ondeVerificar:
-      "Não há o que checar: não existe fonte, fato nem informação útil. Basta reconhecer o padrão de corrente.",
+      "Aplicativos não liberam recursos por quantidade de repasses. Se a mensagem trouxesse um link para \"baixar\" a versão especial, o caso mudaria: seria golpe e o ideal seria denunciar.",
     fonteOficial: {
       nome: "Agência Lupa",
       url: "https://lupa.news",
     },
     explicacao:
-      "Correntes usam medo para se espalhar sozinhas. Aqui ignorar é a resposta ideal: não vale pesquisar nem denunciar, pois não há dano nem informação para corrigir.",
+      "Correntes prometem um benefício falso para se espalhar sozinhas. Aqui não há link, pedido de dados nem dano direto, então ignorar é a resposta ideal. Compartilhar só multiplicaria a corrente, e pesquisar ou denunciar seria esforço desnecessário.",
   },
   {
     id: "cenario-21",
@@ -544,5 +544,81 @@ export const SCENARIOS: Scenario[] = [
     },
     explicacao:
       "Nem toda mensagem é desinformação. Informações de utilidade pública, de fonte identificável e verificável, vale compartilhar. Desconfiar de tudo também é um problema: a boa informação precisa circular.",
+  },
+  {
+    id: "cenario-22",
+    remetente: "Marcelo (amigo da faculdade)",
+    grupo: "Turma da Faculdade",
+    horario: "17:25",
+    conteudo: {
+      tipo: "imagem",
+      texto:
+        "Print da página de segurança do site oficial de um banco, com o endereço visível na barra, avisando " +
+        "que o banco nunca pede senha nem envia link por SMS. Marcelo escreveu: \"Recebi um SMS falso, conferi " +
+        "no site oficial do meu banco e vi esse aviso. Bom saber, o link tá aí na conversa.\"",
+    },
+    gatilhos: [],
+    acaoIdeal: "compartilhar",
+    sinalDeAlerta:
+      "Aqui não há sinais de alerta: a pessoa conta o que viveu, a informação vem do site oficial do banco com endereço visível e dá pra conferir você mesmo, sem clicar em link suspeito.",
+    ondeVerificar:
+      "Acessar o site do seu banco digitando o endereço e procurar a página de segurança, ou ligar para o número do cartão.",
+    fonteOficial: {
+      nome: "Banco Central do Brasil",
+      url: "https://www.bcb.gov.br",
+    },
+    explicacao:
+      "Alertas de golpe são úteis quando indicam uma fonte que você consegue confirmar por conta própria. Mesmo assim, o certo é conferir no canal oficial, sem usar link recebido.",
+  },
+  {
+    id: "cenario-23",
+    remetente: "Dona Neide",
+    grupo: "Vizinhança Segura",
+    horario: "19:20",
+    conteudo: {
+      tipo: "texto",
+      texto:
+        "Gente, um lembrete útil pra época de chuva: dá pra receber os alertas da Defesa Civil de graça no " +
+        "celular. É só mandar um SMS com o CEP da sua casa para o número 40199. Eu já me cadastrei e fiz também " +
+        "o do meu pai. Quem quiser pode conferir a informação no site da Defesa Civil do estado.",
+    },
+    gatilhos: [],
+    acaoIdeal: "compartilhar",
+    sinalDeAlerta:
+      "Aqui não há sinais de alerta: a dica é gratuita, não pede dados além do CEP, não exige repasse nem cria pressa, e a própria mensagem indica o site oficial da Defesa Civil para conferir.",
+    ondeVerificar:
+      "Conferir no site da Defesa Civil do seu estado, ou em portais de governo, como o cadastro funciona (SMS para o 40199 com o CEP).",
+    fonteOficial: {
+      nome: "Governo do RS — Como receber alertas da Defesa Civil",
+      url: "https://estado.rs.gov.br/como-se-cadastrar-para-receber-avisos-e-alertas-da-defesa-civil-no-celular",
+    },
+    explicacao:
+      "Compare com o vídeo de enchente \"agora\", sem data nem fonte: este aviso ensina a receber alertas pelo canal oficial, em vez de depender de vídeos que circulam sem origem. Compartilhar ajuda os vizinhos a se prepararem.",
+  },
+  {
+    id: "cenario-24",
+    remetente: "Pedro (neto)",
+    grupo: "Família Unida",
+    horario: "11:10",
+    conteudo: {
+      tipo: "audio",
+      texto:
+        "\"Vó, lembra que a senhora queria agendar o atendimento no INSS? Não precisa pagar ninguém: dá pra " +
+        "agendar pelo aplicativo Meu INSS ou ligando pro 135. Se alguém cobrar taxa ou pedir sua senha pelo " +
+        "WhatsApp, é golpe. Qualquer coisa me chama que eu ajudo a senhora.\"",
+      duracao: "0:26",
+    },
+    gatilhos: [],
+    acaoIdeal: "compartilhar",
+    sinalDeAlerta:
+      "Aqui não há sinais de alerta: quem fala é uma pessoa conhecida, a orientação aponta os canais oficiais (Meu INSS e telefone 135), não pede dinheiro nem dados e ainda alerta contra golpes.",
+    ondeVerificar:
+      "Conferir os canais oficiais de atendimento (Meu INSS e Central 135) no site do INSS.",
+    fonteOficial: {
+      nome: "INSS — Central 135",
+      url: "https://www.gov.br/inss/pt-br/canais_atendimento/central-135",
+    },
+    explicacao:
+      "Mensagens confiáveis apontam para os canais oficiais e dizem o que o órgão nunca faz, como cobrar taxa. Compartilhar esse tipo de orientação protege quem mais sofre com golpes, como aposentados.",
   },
 ];
