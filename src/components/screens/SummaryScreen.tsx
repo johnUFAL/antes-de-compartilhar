@@ -30,7 +30,7 @@ export default function SummaryScreen() {
       <header className="text-center">
         <h1 className="text-2xl font-bold text-zap-header">Resumo</h1>
         <p className="mt-2 text-4xl font-bold text-slate-900">
-          {ideais}/{SCENARIOS.length}
+          {ideais}/{cenarios.length}
         </p>
         <p className="text-slate-700">
           ações ideais &middot; {state.score} pontos

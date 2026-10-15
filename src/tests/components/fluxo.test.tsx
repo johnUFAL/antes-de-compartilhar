@@ -23,11 +23,12 @@ describe('fluxo completo do app', () => {
 
     // Intro
     expect(screen.getByRole('heading', { name: /antes de compartilhar/i })).toBeInTheDocument();
+    fireEvent.click(screen.getByRole('radio', { name: /todas/i }));
     fireEvent.click(screen.getByRole('button', { name: /começar/i }));
 
     for (let i = 0; i < SCENARIOS.length; i++) {
       // Aparece a mensagem após o "digitando..."
-      const mensagem = await screen.findByRole('article', {}, { timeout: SCENARIOS.length * 2500 });
+      const mensagem = await screen.findByRole('article', {}, { timeout: 3000 });
       //expect(mensagem).toHaveAccessibleName(new RegExp(SCENARIOS[i].remetente));
       expect(mensagem).toHaveAccessibleName(expect.stringContaining(SCENARIOS[i].remetente));
 
