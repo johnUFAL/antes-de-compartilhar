@@ -13,7 +13,9 @@ describe('Dados de Scenarios', () => {
       expect(scenario).toHaveProperty('conteudo');
       expect(scenario.conteudo).toHaveProperty('tipo');
       expect(scenario).toHaveProperty('fonteOficial');
-      expect(scenario.fonteOficial).toHaveProperty('url');
+      if (scenario.fonteOficial) {
+        expect(scenario.fonteOficial).toHaveProperty('url');
+      }
     });
   });
 
@@ -41,7 +43,7 @@ describe('Dados de Scenarios', () => {
       // expect(scenario.gatilhos.length).toBeGreaterThan(0);
 
       // Cenário legítimo (acaoIdeal "compartilhar") não tem gatilhos de manipulação
-      if (scenario.acaoIdeal !== 'compartilhar') {
+      if (scenario.acaoIdeal !== 'compartilhar' && scenario.acaoIdeal !== 'ignorar') {
         expect(scenario.gatilhos.length).toBeGreaterThan(0);
       }
     });

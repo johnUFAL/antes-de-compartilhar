@@ -1,5 +1,5 @@
 import type { Gatilho } from "../types/scenario";
-import { Clock, AlertTriangle, ShieldAlert, Link as Chain } from "lucide-react";
+import { Clock, AlertTriangle, ShieldAlert, Link as Chain, Users, Swords } from "lucide-react";
 
 export const GATILHOS: Record<string, Gatilho> = {
     urgencia: {
@@ -26,4 +26,22 @@ export const GATILHOS: Record<string, Gatilho> = {
         icone: Chain,
         cor: "purple",
     },
+    provocacao: {
+    id: "provocacao",
+    label: "Provocação",
+    icone: AlertTriangle,
+    cor: "red",
+    },
+    "pressao-social": {
+    id: "pressao-social",
+    label: "Pressão Social",
+    icone: Users,
+    cor: "orange",
+    },
+    polarizacao: {
+    id: "polarizacao",
+    label: "Polarização",
+    icone: Swords,
+    cor: "purple",
+  },
 }

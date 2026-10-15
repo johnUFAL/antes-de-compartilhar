@@ -659,10 +659,7 @@ export const SCENARIOS: Scenario[] = [
       "A mensagem não apresenta uma informação relevante nem algo que precise ser repassado.",
     ondeVerificar:
       "Não há necessidade de verificar uma informação que não apresenta uma alegação relevante.",
-    fonteOficial: {
-      nome: "Não se aplica",
-      url: "#"
-    },
+    fonteOficial: null,
     explicacao:
       "Nem toda mensagem recebida precisa de uma resposta ou compartilhamento. " +
       "Ignorar conteúdos irrelevantes também é uma forma de evitar ruído nas conversas."
@@ -687,10 +684,7 @@ export const SCENARIOS: Scenario[] = [
       "A mensagem tenta provocar uma reação emocional e incentivar o compartilhamento por pressão social.",
     ondeVerificar:
       "Não há uma afirmação factual específica que precise ser verificada.",
-    fonteOficial: {
-      nome: "Não se aplica",
-      url: "#"
-    },
+    fonteOficial: null,
     explicacao:
       "Mensagens provocativas podem gerar discussões e compartilhamentos sem acrescentar informação. " +
       "Quando o conteúdo serve apenas para provocar, ignorá-lo pode ser a melhor escolha."
@@ -771,16 +765,13 @@ export const SCENARIOS: Scenario[] = [
       mediaUrl: "/scenarios/audio-cenario-29.mp3",
       duracao: "0:30",
     },
-    gatilhos: ["reflexao"],
+    gatilhos: [],
     acaoIdeal: "ignorar",
     sinalDeAlerta:
       "É uma mensagem de reflexão pessoal, sem uma informação concreta ou orientação que precise ser repassada.",
     ondeVerificar:
       "Não há necessidade de verificar. Trata-se de uma reflexão pessoal, sem uma afirmação factual.",
-    fonteOficial: {
-      nome: "Não se aplica",
-      url: "#"
-    },
+    fonteOficial: null,
     explicacao:
       "A mensagem transmite uma reflexão sobre o tempo, as pessoas e os momentos da vida. " +
       "Ela não apresenta uma notícia ou informação que precise ser confirmada. " +

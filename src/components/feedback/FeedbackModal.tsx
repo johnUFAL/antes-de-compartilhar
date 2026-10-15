@@ -54,16 +54,21 @@ export default function FeedbackModal({ feedback, ultimo, onNext }: Props) {
           </section>
           <section>
             <h3 className="font-bold text-emerald-800">Fonte oficial</h3>
-            <a
-              href={scenario.fonteOficial.url}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-1 text-sky-800 underline focus:outline-none focus-visible:ring-4 focus-visible:ring-yellow-400"
-            >
-              {scenario.fonteOficial.nome}
-              <ExternalLink className="h-3.5 w-3.5" aria-hidden="true" />
-              <span className="sr-only">(abre em nova aba)</span>
-            </a>
+
+            {scenario.fonteOficial ? (
+              <a
+                href={scenario.fonteOficial.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-1 text-sky-800 underline focus:outline-none focus-visible:ring-4 focus-visible:ring-yellow-400"
+              >
+                {scenario.fonteOficial.nome}
+                <ExternalLink className="h-3.5 w-3.5" aria-hidden="true" />
+                <span className="sr-only">(abre em nova aba)</span>
+              </a>
+            ) : (
+              <p>Não se aplica a esta mensagem.</p>
+            )}
           </section>
           <section>
             <h3 className="font-bold text-purple-800">
