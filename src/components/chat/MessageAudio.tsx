@@ -15,7 +15,9 @@ export default function MessageAudio({ src, duracao }: Props) {
 
   useEffect(() => {
     const audio = audioRef.current;
-    return () => audio?.pause();
+    return () => {
+        if (audio && !audio.paused) audio.pause();
+    };
   }, []);
 
   function alternar() {
