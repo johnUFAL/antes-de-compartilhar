@@ -1,6 +1,6 @@
 export type ActionType = "compartilhar" | "pesquisar" | "ignorar" | "denunciar";
 export type MediaType = "texto" | "imagem" | "video" | "audio";
-export type GatilhoId = "urgencia" | "medo" | "autoridade-falsa" | "corrente" | "provocacao" | "pressao-social" | "reflexao";
+export type GatilhoId = "urgencia" | "medo" | "autoridade-falsa" | "corrente" | "provocacao" | "pressao-social" | "reflexao" | "polarizacao";
 
 export interface ScenarioContent {
     tipo: MediaType;

@@ -650,7 +650,7 @@ export const SCENARIOS: Scenario[] = [
       texto:
         "Transcrição\n" +
         "\"Gente, alguém sabe por que o cachorro do vizinho está latindo desde cedo? 😂\"",
-      mediaUrl: "/scenarios/audio-cenario-26.mp3",
+      mediaUrl: "/scenarios/audio-cenario-25.mp3",
       duracao: "0:06",
     },
     gatilhos: [],
@@ -786,4 +786,38 @@ export const SCENARIOS: Scenario[] = [
       "Ela não apresenta uma notícia ou informação que precise ser confirmada. " +
       "Por isso, embora possa fazer sentido para quem recebeu, não há necessidade de compartilhá-la."
   },
+  {
+    id: "cenario-30",
+    remetente: "Daniel Vorcaro",
+    grupo: "Daniel Vorcaro",
+    horario: "22:17",
+    conteudo: {
+      tipo: "audio",
+      texto:
+        "Transcrição\n" +
+        "\"Nem toda atitude merece tolerância. " +
+        "E certamente nem todo mundo que grita mais alto merece ser ouvido. " +
+        "Está na hora de escolher de que lado você está. " +
+        "Fique em silêncio se quiser. Mas lembre-se: quando pessoas de bem deixam de falar, " +
+        "outras pessoas ocupam o espaço. Compartilhe esta mensagem. Faça sua voz ser ouvida. " +
+        "Não deixe que eles tomem aquilo que é nosso.\"",
+      mediaUrl: "/scenarios/audio-cenario-30.mp3",
+      duracao: "0:23",
+    },
+    gatilhos: ["medo", "polarizacao", "pressao-social"],
+    acaoIdeal: "denunciar",
+    sinalDeAlerta:
+      "O áudio tenta criar uma divisão entre 'nós' e 'eles', usando medo, hostilidade e pressão para incentivar a mobilização contra outras pessoas.",
+    ondeVerificar:
+      "Não é necessário verificar uma opinião para reconhecer o tom hostil. Avalie o conteúdo e utilize as ferramentas da plataforma caso ele incentive hostilidade ou violência.",
+    fonteOficial: {
+      nome: "Central de Segurança — WhatsApp",
+      url: "https://faq.whatsapp.com/1142481766359885/?locale=pt_BR&cms_platform=web"
+    },
+    explicacao:
+      "O problema não está apenas em uma informação ser verdadeira ou falsa. " +
+      "A mensagem utiliza linguagem de confronto, cria um inimigo indefinido e tenta " +
+      "pressionar o ouvinte a escolher um lado. Conteúdos que incentivam hostilidade " +
+      "ou violência podem ser denunciados em vez de amplificados."
+  }
 ];
