@@ -640,4 +640,150 @@ export const SCENARIOS: Scenario[] = [
     explicacao:
       "Mensagens confiáveis apontam para os canais oficiais e dizem o que o órgão nunca faz, como cobrar taxa. Compartilhar esse tipo de orientação protege quem mais sofre com golpes, como aposentados.",
   },
+  {
+    id: "cenario-25",
+    remetente: "Waldo Moraes",
+    grupo: "Os Farroupilhas",
+    horario: "09:32",
+    conteudo: {
+      tipo: "audio",
+      texto:
+        "Transcrição\n" +
+        "\"Gente, alguém sabe por que o cachorro do vizinho está latindo desde cedo? 😂\"",
+      mediaUrl: "/scenarios/audio-cenario-26.mp3",
+      duracao: "0:06",
+    },
+    gatilhos: [],
+    acaoIdeal: "ignorar",
+    sinalDeAlerta:
+      "A mensagem não apresenta uma informação relevante nem algo que precise ser repassado.",
+    ondeVerificar:
+      "Não há necessidade de verificar uma informação que não apresenta uma alegação relevante.",
+    fonteOficial: {
+      nome: "Não se aplica",
+      url: "#"
+    },
+    explicacao:
+      "Nem toda mensagem recebida precisa de uma resposta ou compartilhamento. " +
+      "Ignorar conteúdos irrelevantes também é uma forma de evitar ruído nas conversas."
+  },
+  {
+    id: "cenario-26",
+    remetente: "Jaizinho",
+    grupo: "Jaizinho",
+    horario: "21:14",
+    conteudo: {
+      tipo: "audio",
+      texto:
+        "Transcrição\n" +
+        "\"Quem ainda apoia esse candidato depois de tudo isso só pode ser muito burro. " +
+        "Compartilhe para todo mundo saber!\"",
+      mediaUrl: "/scenarios/audio-cenario-26.mp3",
+      duracao: "0:05",
+    },
+    gatilhos: ["provocacao", "pressao-social"],
+    acaoIdeal: "ignorar",
+    sinalDeAlerta:
+      "A mensagem tenta provocar uma reação emocional e incentivar o compartilhamento por pressão social.",
+    ondeVerificar:
+      "Não há uma afirmação factual específica que precise ser verificada.",
+    fonteOficial: {
+      nome: "Não se aplica",
+      url: "#"
+    },
+    explicacao:
+      "Mensagens provocativas podem gerar discussões e compartilhamentos sem acrescentar informação. " +
+      "Quando o conteúdo serve apenas para provocar, ignorá-lo pode ser a melhor escolha."
+  },
+  {
+    id: "cenario-27",
+    remetente: "Companhia de Energia",
+    grupo: "Companhia de Energia",
+    horario: "10:45",
+    conteudo: {
+      tipo: "texto",
+      texto:
+        "Aviso: haverá interrupção programada de energia amanhã, das 9h às 13h, " +
+        "para manutenção da rede. Organize-se com antecedência."
+    },
+    gatilhos: [],
+    acaoIdeal: "compartilhar",
+    sinalDeAlerta:
+      "A mensagem apresenta motivo, data e horário específicos e identifica a empresa responsável.",
+    ondeVerificar:
+      "Consultar o site ou aplicativo oficial da companhia de energia.",
+    fonteOficial: {
+      nome: "Site oficial da companhia",
+      url: "https://al.equatorialenergia.com.br/"
+    },
+    explicacao:
+      "Informações de serviço verificáveis podem ser úteis para outras pessoas afetadas. " +
+      "Nesse caso, compartilhar ajuda os membros do grupo a se prepararem."
+  },
+  {
+    id: "cenario-28",
+    remetente: "Defesa Civil",
+    grupo: "Defesa Civil",
+    horario: "16:20",
+    conteudo: {
+      tipo: "audio",
+      texto:
+        "Transcrição\n" +
+        "\"A Defesa Civil informa: há previsão de chuvas intensas entre esta noite " +
+        "e amanhã. Evite áreas de risco e acompanhe os canais oficiais.\"",
+      mediaUrl: "/scenarios/audio-cenario-28.mp3",
+      duracao: "0:07",
+    },
+    gatilhos: [],
+    acaoIdeal: "compartilhar",
+    sinalDeAlerta:
+      "A mensagem identifica claramente o órgão responsável e orienta a população a acompanhar os canais oficiais.",
+    ondeVerificar:
+      "Consultar os canais oficiais da Defesa Civil para confirmar o alerta.",
+    fonteOficial: {
+      nome: "Defesa Civil — Alertas",
+      url: "https://www.gov.br/mdr/pt-br/assuntos/protecao-e-defesa-civil"
+    },
+    explicacao:
+      "Alertas oficiais sobre riscos à população podem ser importantes para outras pessoas. " +
+      "Quando a origem é identificável e verificável, compartilhar pode ajudar a prevenir acidentes."
+  },
+  {
+    id: "cenario-29",
+    remetente: "Pedro (neto)",
+    grupo: "Família Unida",
+    horario: "23:48",
+    conteudo: {
+      tipo: "audio",
+      texto:
+        "Transcrição\n" +
+        "\"Hoje não é o pior dia da sua vida. Hoje e amanhã, passa rápido. " +
+        "As pessoas vão estar com você o tempo todo, com medo de te deixar sozinha. " +
+        "O pior dia... vem na semana que vem. Quando só restar o silêncio. " +
+        "Talvez você ainda não perceba, mas algumas coisas estão prestes a mudar. " +
+        "Nem todo mundo que está ao seu lado continuará por perto quando tudo acontecer. " +
+        "Por isso, aproveite cada momento, abrace quem você ama e não deixe para dizer " +
+        "amanhã aquilo que poderia dizer hoje. O tempo não espera ninguém e algumas " +
+        "oportunidades desaparecem sem avisar. Se você recebeu essa mensagem, pare por " +
+        "um instante, olhe ao seu redor e pense nas pessoas que fazem parte da sua vida. " +
+        "Não ignore os sinais. Não deixe o silêncio chegar sem antes fazer aquilo que " +
+        "seu coração está pedindo.\"",
+      mediaUrl: "/scenarios/audio-cenario-29.mp3",
+      duracao: "0:30",
+    },
+    gatilhos: ["reflexao"],
+    acaoIdeal: "ignorar",
+    sinalDeAlerta:
+      "É uma mensagem de reflexão pessoal, sem uma informação concreta ou orientação que precise ser repassada.",
+    ondeVerificar:
+      "Não há necessidade de verificar. Trata-se de uma reflexão pessoal, sem uma afirmação factual.",
+    fonteOficial: {
+      nome: "Não se aplica",
+      url: "#"
+    },
+    explicacao:
+      "A mensagem transmite uma reflexão sobre o tempo, as pessoas e os momentos da vida. " +
+      "Ela não apresenta uma notícia ou informação que precise ser confirmada. " +
+      "Por isso, embora possa fazer sentido para quem recebeu, não há necessidade de compartilhá-la."
+  },
 ];
