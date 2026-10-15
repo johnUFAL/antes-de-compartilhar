@@ -6,6 +6,7 @@ export interface ScenarioContent {
     tipo: MediaType;
     texto?: string;
     mediaUrl?: string;
+    mediaAlt?: string;
     duracao?: string;
 }
 

@@ -11,7 +11,7 @@ export const SCENARIOS: Scenario[] = [
     // POLITICA 
     // ---------------------------------------------------------------------------
     id: "cenario-01",
-    remetente: "Grupo da Igreja",
+    remetente: "Crente judia",
     grupo: "Grupo da Igreja",
     horario: "08:15",
     conteudo: {
@@ -36,7 +36,7 @@ export const SCENARIOS: Scenario[] = [
   },
   {
     id: "cenario-02",
-    remetente: "Grupo Vizinhança Unida",
+    remetente: "Sheyla Madeira",
     grupo: "Grupo Vizinhança Unida",
     horario: "19:47",
     conteudo: {
@@ -61,14 +61,15 @@ export const SCENARIOS: Scenario[] = [
   },
   {
     id: "cenario-03",
-    remetente: "Página Notícia Já",
-    grupo: "Grupo Notícias da Cidade",
+    remetente: "Grupo Notícia Já",
+    grupo: "Grupo Notícia Já",
     horario: "12:03",
     conteudo: {
       tipo: "imagem",
       texto:
-        "Print de \"manchete\": \"Candidata Juliana Prado desiste da eleição horas antes do debate\"",
-      mediaUrl: "https://placehold.co/600x400?text=print-manchete-desistencia",
+        "Candidata Juliana Prado desiste da eleição horas antes do debate.",
+      mediaUrl: "/scenarios/imagem-cenario-03.jpeg",
+      mediaAlt: "Print de \"manchete\": \"Candidata Juliana Prado desiste da eleição horas antes do debate\""
     },
     gatilhos: ["autoridade-falsa"],
     acaoIdeal: "pesquisar",
@@ -87,13 +88,14 @@ export const SCENARIOS: Scenario[] = [
   {
     id: "cenario-04",
     remetente: "Contato desconhecido",
-    grupo: "Alerta Eleitoral",
+    grupo: "Contato desconhecido",
     horario: "10:22",
     conteudo: {
       tipo: "imagem",
       texto:
-        "\"Documento oficial\" alegando que os dados biométricos dos eleitores serão vendidos a empresas privadas",
-      mediaUrl: "https://placehold.co/600x400?text=documento-biometria-falso",
+        "Documento oficial que mostra que os dados biométricos dos eleitores serão vendidos a empresas privadas.",
+      mediaUrl: "/scenarios/imagem-cenario-04.jpeg",
+      mediaAlt: "\"Documento oficial\" alegando que os dados biométricos dos eleitores serão vendidos a empresas privadas",
     },
     gatilhos: ["medo"],
     acaoIdeal: "denunciar",
@@ -111,14 +113,15 @@ export const SCENARIOS: Scenario[] = [
   },
   {
     id: "cenario-05",
-    remetente: "Canal Verdade Nua",
+    remetente: "Verdade Nua",
     grupo: "Grupo Debate Político",
     horario: "21:10",
     conteudo: {
       tipo: "video",
       texto:
-        "\"Especialista em eleições\" afirma em vídeo ter provas de fraude nas urnas desta eleição",
-      mediaUrl: "https://placehold.co/600x400?text=video-especialista-fraude",
+        "Especialista em eleições afirma em vídeo ter provas de fraude nas urnas desta eleição.",
+      mediaUrl: "/scenarios/video-cenario-05.png",
+      mediaAlt: "\"Especialista em eleições\" afirma em vídeo ter provas de fraude nas urnas desta eleição",
       duracao: "2:34",
     },
     gatilhos: ["autoridade-falsa", "urgencia"],
@@ -141,10 +144,11 @@ export const SCENARIOS: Scenario[] = [
     grupo: "Grupo Última Hora",
     horario: "16:40",
     conteudo: {
-      tipo: "video",
+      tipo: "imagem",
       texto:
-        "Vídeo que se apresenta como \"pronunciamento oficial\" anunciando o adiamento da eleição",
-      mediaUrl: "https://placehold.co/600x400?text=video-pronunciamento-falso",
+        "[OFICIAL] As eleições para esse ano serão adiadas!",
+      mediaUrl: "/scenarios/imagem-cenario-06.png",
+      mediaAlt: "Vídeo que se apresenta como \"pronunciamento oficial\" anunciando o adiamento da eleição",
       duracao: "1:05",
     },
     gatilhos: ["autoridade-falsa", "urgencia"],
@@ -169,9 +173,9 @@ export const SCENARIOS: Scenario[] = [
     conteudo: {
       tipo: "audio",
       texto:
-        "Áudio \"vazado\" avisando que a seção eleitoral do bairro mudou de local de última hora",
+        "Transcrição\n" + "\"Atenção, moradores do distrito. Um comunicado emitido há poucos instantes pela comissão central confirma a alteração emergencial na seção eleitoral do bairro. Repetindo: devido a imprevistos de última hora, o local de votação original foi desativado. Todos os cidadãos devem se dirigir imediatamente ao novo endereço indicado no mapa oficial para garantir o seu registro.\"",
       duracao: "0:38",
-      mediaUrl: "https://placehold.co/600x400?text=audio-mudanca-local",
+      mediaUrl: "/scenarios/audio-cenario-07.mp3",
     },
     gatilhos: ["urgencia", "corrente"],
     acaoIdeal: "pesquisar",
@@ -189,15 +193,15 @@ export const SCENARIOS: Scenario[] = [
   },
   {
     id: "cenario-08",
-    remetente: "Contato salvo como \"Zona Eleitoral\"",
-    grupo: "Alerta Eleitoral",
+    remetente: "Fiscal eleitoral",
+    grupo: "Fiscal eleitoral",
     horario: "13:25",
     conteudo: {
       tipo: "audio",
       texto:
-        "Áudio de um suposto \"fiscal eleitoral\" pedindo para o eleitor \"revalidar o voto\" por um aplicativo",
+        "Transcrição\n" + "\"Aqui é o fiscal eleitoral da zona central. Estamos entrando em contato porque identificamos uma inconsistência na assinatura digital do seu terminal de votação. Para que o seu voto não seja anulado pelo sistema, você precisa fazer a revalidação imediata. Por favor, baixe o aplicativo que acabei de enviar no seu link privado, insira sua chave de segurança e confirme o código.\"",
       duracao: "0:51",
-      mediaUrl: "https://placehold.co/600x400?text=audio-revalidar-voto",
+      mediaUrl: "/scenarios/audio-cenario-08.mp3",
     },
     gatilhos: ["medo", "autoridade-falsa"],
     acaoIdeal: "denunciar",
@@ -298,7 +302,9 @@ export const SCENARIOS: Scenario[] = [
     conteudo: {
       tipo: "imagem",
       texto:
-        "Imagem com logotipo parecido com o de um órgão de saúde e o texto: \"COMUNICADO OFICIAL: lote de vacinas " +
+        "COMUNICADO OFICIAL: lote de vacinas será recolhido após mortes.",
+      mediaUrl: "/scenarios/imagem-cenario-12.jpeg",
+      mediaAlt: "Imagem com logotipo parecido com o de um órgão de saúde e o texto: \"COMUNICADO OFICIAL: lote de vacinas " +
         "será recolhido após mortes. Não leve seus filhos ao posto. Compartilhe!\"",
     },
     gatilhos: ["autoridade-falsa", "medo", "urgencia"],
@@ -323,9 +329,10 @@ export const SCENARIOS: Scenario[] = [
     conteudo: {
       tipo: "audio",
       texto:
-        "\"Bom dia, pessoal, aqui é a Cláudia, agente de saúde do posto da Vila Nova. Na campanha de vacinação, " +
+        "Transcrição\n" + "\"Bom dia, pessoal, aqui é a Cláudia, agente de saúde do posto da Vila Nova. Na campanha de vacinação, " +
         "o posto vai abrir uma hora mais cedo. Quem tiver dúvida sobre a vacina de cada idade pode olhar o " +
         "calendário no site do Ministério da Saúde ou passar aqui no posto.\"",
+      mediaUrl: "/scenarios/audio-cenario-13.mp3",
       duracao: "0:24",
     },
     gatilhos: [],
@@ -377,8 +384,9 @@ export const SCENARIOS: Scenario[] = [
     conteudo: {
       tipo: "audio",
       texto:
-        "\"Oi, mano, sou eu o seu amigo. Meu celular quebrou, estou usando esse número novo. Preciso pagar um boleto " +
+        "Transcrição\n" + "\"Oi, meu véi, meu brother. Meu celular quebrou, estou usando esse número novo. Preciso pagar um boleto " +
         "hoje e estou sem acesso ao app do banco. Você consegue fazer um Pix pra mim? Depois te explico.\"",
+      mediaUrl: "/scenarios/audio-cenario-15.mp3",
       duracao: "0:19",
     },
     gatilhos: ["urgencia", "medo"],
@@ -421,13 +429,16 @@ export const SCENARIOS: Scenario[] = [
   },
   {
     id: "cenario-17",
-    remetente: "Canal Dinheiro Fácil",
+    remetente: "Ficar rico é bem fácil na real",
     grupo: "Investidores do Zap",
     horario: "20:30",
     conteudo: {
       tipo: "video",
       texto:
-        "Vídeo de um \"apresentador de telejornal\" dizendo que uma nova plataforma devolve R$ 5.000 a quem " +
+        "Apresentador de telejornal anuncia uma nova plataforma que devolve R$ 5.000 a quem " +
+        "investir R$ 500 hoje.",
+      mediaUrl: "/scenarios/video-cenario-17.png",
+      mediaAlt: "Vídeo de um \"apresentador de telejornal\" dizendo que uma nova plataforma devolve R$ 5.000 a quem " +
         "investir R$ 500 hoje. As vagas acabam em poucas horas.",
       duracao: "0:57",
     },
@@ -478,9 +489,11 @@ export const SCENARIOS: Scenario[] = [
     grupo: "Vizinhança Segura",
     horario: "21:15",
     conteudo: {
-      tipo: "video",
+      tipo: "imagem",
       texto:
-        "Vídeo de uma rua sendo tomada por uma enchente, com a legenda: \"AGORA na nossa cidade!! Cuidado, " +
+        "Uma rua aqui na cidade está sendo tomada por uma enchente. Chuvas fortes, cuidado!!!",
+      mediaUrl: "/scenarios/imagem-cenario-19.jpeg",
+      mediaAlt: "Vídeo de uma rua sendo tomada por uma enchente, com a legenda: \"AGORA na nossa cidade!! Cuidado, " +
         "fiquem em casa!\" Não aparece nome de rua, data nem veículo de imprensa.",
       duracao: "0:37",
     },
@@ -529,7 +542,9 @@ export const SCENARIOS: Scenario[] = [
     conteudo: {
       tipo: "imagem",
       texto:
-        "Card colorido de campanha de vacinação com datas, público-alvo e a frase \"Consulte o calendário completo " +
+        "Campanha de vacinação",
+      mediaUrl: "/scenarios/imagem-cenario-21.jpeg",
+      mediaAlt: "Card colorido de campanha de vacinação com datas, público-alvo e a frase \"Consulte o calendário completo " +
         "no site do Ministério da Saúde\". Enviado por uma conta verificada do posto de saúde do bairro.",
     },
     gatilhos: [],
@@ -553,7 +568,9 @@ export const SCENARIOS: Scenario[] = [
     conteudo: {
       tipo: "imagem",
       texto:
-        "Print da página de segurança do site oficial de um banco, com o endereço visível na barra, avisando " +
+        "Banco nunca pede senha nem envia link por SMS, vejam!",
+      mediaUrl: "/scenarios/imagem-cenario-22.png",
+      mediaAlt: "Print da página de segurança do site oficial de um banco, com o endereço visível na barra, avisando " +
         "que o banco nunca pede senha nem envia link por SMS. Marcelo escreveu: \"Recebi um SMS falso, conferi " +
         "no site oficial do meu banco e vi esse aviso. Bom saber, o link tá aí na conversa.\"",
     },
@@ -603,9 +620,11 @@ export const SCENARIOS: Scenario[] = [
     conteudo: {
       tipo: "audio",
       texto:
+        "Transcrição\n" +
         "\"Vó, lembra que a senhora queria agendar o atendimento no INSS? Não precisa pagar ninguém: dá pra " +
         "agendar pelo aplicativo Meu INSS ou ligando pro 135. Se alguém cobrar taxa ou pedir sua senha pelo " +
         "WhatsApp, é golpe. Qualquer coisa me chama que eu ajudo a senhora.\"",
+      mediaUrl: "/scenarios/audio-cenario-24.mp3",
       duracao: "0:26",
     },
     gatilhos: [],

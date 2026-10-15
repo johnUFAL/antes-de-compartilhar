@@ -1,4 +1,5 @@
 import { Image as ImageIcon, Mic, Play } from 'lucide-react';
+import MessageAudio from './MessageAudio';
 import type { ScenarioContent } from '../../types/scenario';
 
 interface Props {
@@ -9,26 +10,50 @@ const BARRAS = [6, 14, 9, 18, 12, 20, 8, 16, 11, 19, 7, 13, 17, 10, 15, 8, 12, 6
 
 // Mídia simulada via CSS: nenhuma imagem/vídeo/áudio real é usado.
 export default function MessageMedia({ conteudo }: Props) {
+  // if (conteudo.tipo === 'imagem') {
+  //   return (
+  //     <div
+  //       role="img"
+  //       aria-label="Imagem simulada recebida na conversa"
+  //       className="flex h-40 w-full items-center justify-center rounded-md bg-gradient-to-br from-slate-300 to-slate-400"
+  //     >
+  //       <ImageIcon className="h-10 w-10 text-slate-600" aria-hidden="true" />
+  //     </div>
+  //   );
+  // }
+
   if (conteudo.tipo === 'imagem') {
+  if (conteudo.mediaUrl) {
     return (
-      <div
-        role="img"
-        aria-label="Imagem simulada recebida na conversa"
-        className="flex h-40 w-full items-center justify-center rounded-md bg-gradient-to-br from-slate-300 to-slate-400"
-      >
-        <ImageIcon className="h-10 w-10 text-slate-600" aria-hidden="true" />
-      </div>
+      <img
+        src={conteudo.mediaUrl}
+        alt={conteudo.mediaAlt ?? 'Imagem recebida na conversa'}
+        className="h-auto max-h-64 w-full rounded-md object-cover"
+      />
     );
+  }
+    return (
+     <div
+       role="img"
+       aria-label="Imagem simulada recebida na conversa"
+       className="flex h-40 w-full items-center justify-center rounded-md bg-gradient-to-br from-slate-300 to-slate-400"
+     >
+       <ImageIcon className="h-10 w-10 text-slate-600" aria-hidden="true" />
+     </div>
+   );
   }
 
   if (conteudo.tipo === 'video') {
     return (
       <div
         role="img"
-        aria-label={`Vídeo simulado de ${conteudo.duracao ?? 'duração desconhecida'}`}
-        className="relative flex h-40 w-full items-center justify-center rounded-md bg-gradient-to-br from-slate-700 to-slate-900"
+        aria-label={`Vídeo: ${conteudo.mediaAlt ?? 'simulado'}, duração ${conteudo.duracao ?? 'desconhecida'}`}
+        className="relative flex h-40 w-full items-center justify-center overflow-hidden rounded-md bg-gradient-to-br from-slate-700 to-slate-900"
       >
-        <span className="flex h-12 w-12 items-center justify-center rounded-full bg-black/50">
+        {conteudo.mediaUrl && (
+          <img src={conteudo.mediaUrl} alt="" className="absolute inset-0 h-full w-full object-cover" />
+        )}
+        <span className="relative flex h-12 w-12 items-center justify-center rounded-full bg-black/50">
           <Play className="h-6 w-6 text-white" aria-hidden="true" />
         </span>
         <span className="absolute bottom-1.5 right-2 rounded bg-black/60 px-1.5 text-xs text-white">
@@ -39,6 +64,10 @@ export default function MessageMedia({ conteudo }: Props) {
   }
 
   if (conteudo.tipo === 'audio') {
+    if (conteudo.mediaUrl) {
+      return <MessageAudio src={conteudo.mediaUrl} duracao={conteudo.duracao} />;
+    }
+
     return (
       <div
         role="img"
