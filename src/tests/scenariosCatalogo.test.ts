@@ -23,7 +23,9 @@ describe("scenarios.ts", () => {
 
     it("toda fontOficial tem uma url não vazia", () => {
         SCENARIOS.forEach((cenario) => {
-            expect(cenario.fonteOficial.url).toMatch(/^https?:\/\//);
+            if (cenario.fonteOficial) {
+                expect(cenario.fonteOficial.url).toMatch(/^https?:\/\//);
+            }
         });
     });
 

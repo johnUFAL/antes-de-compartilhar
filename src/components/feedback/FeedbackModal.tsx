@@ -18,6 +18,7 @@ export default function FeedbackModal({ feedback, ultimo, onNext }: Props) {
   const { scenario, nivel, mensagem } = feedback;
   const { Icone, titulo, faixa } = ESTILOS[nivel];
   const botaoRef = useRef<HTMLButtonElement>(null);
+  const legitimo = scenario.acaoIdeal === 'compartilhar';
 
   // Leva o foco ao botão para quem usa teclado ou leitor de tela
   useEffect(() => {
@@ -42,7 +43,9 @@ export default function FeedbackModal({ feedback, ultimo, onNext }: Props) {
         <div className="space-y-3 p-4 text-left text-sm text-slate-800">
           <p className="font-semibold">{mensagem}</p>
           <section>
-            <h3 className="font-bold text-red-800">Sinal de alerta</h3>
+            <h3 className={`font-bold ${legitimo ? 'text-emerald-800' : 'text-red-800'}`}>
+              {legitimo ? 'Por que é confiável' : 'Sinal de alerta'}
+            </h3>
             <p>{scenario.sinalDeAlerta}</p>
           </section>
           <section>
@@ -51,19 +54,26 @@ export default function FeedbackModal({ feedback, ultimo, onNext }: Props) {
           </section>
           <section>
             <h3 className="font-bold text-emerald-800">Fonte oficial</h3>
-            <a
-              href={scenario.fonteOficial.url}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-1 text-sky-800 underline focus:outline-none focus-visible:ring-4 focus-visible:ring-yellow-400"
-            >
-              {scenario.fonteOficial.nome}
-              <ExternalLink className="h-3.5 w-3.5" aria-hidden="true" />
-              <span className="sr-only">(abre em nova aba)</span>
-            </a>
+
+            {scenario.fonteOficial ? (
+              <a
+                href={scenario.fonteOficial.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-1 text-sky-800 underline focus:outline-none focus-visible:ring-4 focus-visible:ring-yellow-400"
+              >
+                {scenario.fonteOficial.nome}
+                <ExternalLink className="h-3.5 w-3.5" aria-hidden="true" />
+                <span className="sr-only">(abre em nova aba)</span>
+              </a>
+            ) : (
+              <p>Não se aplica a esta mensagem.</p>
+            )}
           </section>
           <section>
-            <h3 className="font-bold text-purple-800">Por que engana</h3>
+            <h3 className="font-bold text-purple-800">
+              {legitimo ? 'Por que vale compartilhar' : 'Por que engana'}
+            </h3>
             <p>{scenario.explicacao}</p>
           </section>
         </div>

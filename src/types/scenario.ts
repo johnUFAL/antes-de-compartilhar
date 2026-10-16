@@ -1,11 +1,12 @@
 export type ActionType = "compartilhar" | "pesquisar" | "ignorar" | "denunciar";
 export type MediaType = "texto" | "imagem" | "video" | "audio";
-export type GatilhoId = "urgencia" | "medo" | "autoridade-falsa" | "corrente";
+export type GatilhoId = "urgencia" | "medo" | "autoridade-falsa" | "corrente" | "provocacao" | "pressao-social" | "polarizacao";
 
 export interface ScenarioContent {
     tipo: MediaType;
     texto?: string;
     mediaUrl?: string;
+    mediaAlt?: string;
     duracao?: string;
 }
 
@@ -26,7 +27,7 @@ export interface Scenario {
     acaoIdeal: ActionType;
     sinalDeAlerta: string;
     ondeVerificar: string;
-    fonteOficial: { nome: string; url: string };
+    fonteOficial: { nome: string; url: string } | null ; 
     explicacao: string;
 }
 
