@@ -666,17 +666,15 @@ export const SCENARIOS: Scenario[] = [
   },
   {
     id: "cenario-26",
-    remetente: "Jaizinho",
-    grupo: "Jaizinho",
+    remetente: "Jurandir",
+    grupo: "Jurandir",
     horario: "21:14",
     conteudo: {
-      tipo: "audio",
+      tipo: "texto",
       texto:
         "Transcrição\n" +
         "\"Quem ainda apoia esse candidato depois de tudo isso só pode ser muito burro. " +
         "Compartilhe para todo mundo saber!\"",
-      mediaUrl: "/scenarios/audio-cenario-26.mp3",
-      duracao: "0:05",
     },
     gatilhos: ["provocacao", "pressao-social"],
     acaoIdeal: "ignorar",
